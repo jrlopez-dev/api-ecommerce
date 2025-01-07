@@ -1,20 +1,25 @@
 package com.ecommerce.api.service;
-
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-
-
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.ArrayList;
-import java.util.List;
+
 
 @Service
 public class BusquedaTwitterService {
-    private static final String BEARER_TOKEN = "AAAAAAAAAAAAAAAAAAAAAA3sxwEAAAAAJFRJdE8QRHWKcJHibW70A4mJwcU%3Dm1jg6nwpBprMZ0laztxv1gpGFpp7OjqZvkEhbAlmgQTMzN54f3";
+    @Value("${tokentwitter}")
+    private String token;
+    @Value("${urlendpointtwitter}")
+    private String urlendpointtwitter;
+
+
+    String BEARER_TOKEN = token;
 
     public  String getTwitter(String keyword) {
+        System.out.println("TOKEN: "+token);
+        System.out.println("URL: "+urlendpointtwitter);
         int maxResults = 10;
         try {
             String endpoint = String.format(
