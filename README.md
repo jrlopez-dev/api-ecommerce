@@ -55,3 +55,6 @@ JSON que se debe enviar (Data de ejemplo): {
 
 Eliminar producto:
 1. http://localhost:8080/api/eliminar?id=1 se envia el ID del producto que se desea eliminar
+
+Para el tema de la integracion de la api de twitter es necesario reemplazar en el archivo properties el tocken de acceso. La url ya va
+configurada actualmente en el properties.

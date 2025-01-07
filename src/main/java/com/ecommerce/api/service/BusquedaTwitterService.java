@@ -23,7 +23,7 @@ public class BusquedaTwitterService {
         int maxResults = 10;
         try {
             String endpoint = String.format(
-                    "https://api.twitter.com/2/tweets/search/recent?query=%s&max_results=%d&tweet.fields=text,created_at",
+                    urlendpointtwitter,
                     keyword,
                     maxResults
             );
